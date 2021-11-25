@@ -5,7 +5,7 @@ import { Walk } from "../components/Walk"
 
 export const Home = () => {
     const filter = useColorModeValue("none", "invert()")
-    return <VStack w="100%" spacing={10}>
+    return <VStack w="100%" spacing={20}>
         <Box boxSize="xs" p={4}>
             <Image style={{ filter }} src="https://cdn.pixabay.com/photo/2021/04/05/14/52/hiking-6153739_1280.png" />
         </Box>
@@ -13,8 +13,8 @@ export const Home = () => {
             wandelingen
         </Heading>
         <Stack w="100%" divider={<MoonDivider/>}>
-            <Walk komootId="570508073" />
-            <Walk komootId="570502619" />
+            <Walk location="Averbode bos & heide" komootId="570508073" />
+            <Walk location="Kagevinne" komootId="570502619" />
         </Stack>
     </VStack>
 }
