@@ -1,5 +1,5 @@
 import { Heading, Stack } from "@chakra-ui/layout";
-import { Badge, HStack, Spacer } from "@chakra-ui/react";
+import { Badge, HStack } from "@chakra-ui/react";
 import { Skeleton } from "@chakra-ui/skeleton";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";

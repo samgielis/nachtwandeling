@@ -15,7 +15,7 @@ import { Footer } from "./layout/Footer"
 
 export const App = () => (
   <ChakraProvider theme={theme}>
-    <Stack fontSize="xl" spacing={8} minH="100vh">
+    <Stack fontSize="xl" spacing={{base: 8, md: 10}} minH="100vh">
       <Header />
       <Center>
         <Container >
