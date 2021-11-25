@@ -1,5 +1,5 @@
 import { Heading, Stack } from "@chakra-ui/layout";
-import { HStack, Spacer } from "@chakra-ui/react";
+import { Badge, HStack, Spacer } from "@chakra-ui/react";
 import { Skeleton } from "@chakra-ui/skeleton";
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
@@ -16,13 +16,9 @@ export const Walk = ({ komootId, location, date }: WalkProps) => {
         /* Optional options */
         threshold: 0,
     });
-
     return <Stack spacing={4} fontFamily="sans-serif" ref={ref}>
-        <Stack spacing={0}>
-
-            <Heading as="h4" fontSize="md" textTransform="uppercase">
-                {date?.toLocaleDateString() || "TBD"}
-            </Heading>
+        <Stack spacing={1}>
+            <DateHeader date={date} />
             <Heading as="h2" textTransform="uppercase" color="rgb(79, 133, 13)">
                 {location}
             </Heading>
@@ -32,4 +28,19 @@ export const Walk = ({ komootId, location, date }: WalkProps) => {
         </Skeleton>
         }
     </Stack>
+}
+
+interface DateHeaderProps {
+    date?: Date;
+}
+
+const DateHeader = ({ date }: DateHeaderProps) => {
+    const isUpcoming = date && date > new Date();
+
+    return <HStack spacing={2}>
+        <Heading as="h4" fontSize="md" textTransform="uppercase">
+            {date?.toLocaleDateString() || "TBD"}
+        </Heading>
+        {isUpcoming && <Badge colorScheme="blue">Upcoming</Badge>}
+    </HStack>
 }
