@@ -8,7 +8,7 @@ import {
   Spacer,
 } from "@chakra-ui/react"
 import { Header } from "./layout/Header"
-import { Route, Routes } from "react-router-dom"
+import { Navigate, Route, Routes } from "react-router-dom"
 import { Home } from "./screens/Home"
 import { Practical } from "./screens/Practical"
 import { Footer } from "./layout/Footer"
@@ -21,8 +21,8 @@ export const App = () => (
         <Container >
           <Center p={.5}>
             <Routes>
+              <Route path="nachtwandeling" element={<Navigate replace to="/" />} />
               <Route path="/" element={<Home />} />
-              <Route path="nachtwandeling" element={<Home />} />
               <Route path="praktisch" element={<Practical />} />
             </Routes>
           </Center>
