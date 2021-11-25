@@ -22,6 +22,7 @@ export const App = () => (
           <Center p={.5}>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="nachtwandeling" element={<Home />} />
               <Route path="praktisch" element={<Practical />} />
             </Routes>
           </Center>
