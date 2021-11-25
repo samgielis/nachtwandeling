@@ -1,13 +1,20 @@
-import { Heading, Stack, Text } from "@chakra-ui/layout"
-import { Image } from "@chakra-ui/react"
+import { Heading, ListItem, VStack, Text, UnorderedList } from "@chakra-ui/layout"
 
 export const Practical = () => {
-    return <Stack>
+    return <VStack spacing={5}>
         <Heading as="h1" size="2xl" textTransform="uppercase">
             Praktisch
         </Heading>
         <Text>
-            Een nachtwandeling is de ideale kans om oude of nieuwe vrienden te onmoeten. Er zijn meestal tussen de 6 en 15 personen aanwezig
+            Een nachtwandeling is de ideale kans om oude of nieuwe vrienden te onmoeten. Er zijn meestal tussen de 6 en 15 personen aanwezig en het wordt aangemoedigd om met iedereen eens te spreken.
         </Text>
-    </Stack>
+        <Text>
+            Enkele praktische tips:
+        </Text>
+            <UnorderedList>
+                <ListItem>🍻 Breng je eigen drank of snacks mee</ListItem>
+                <ListItem>⏱️ Kom optijd naar de startplaats</ListItem>
+                <ListItem>🔦 Breng toch-door-het-donker-gewijs een zaklamp mee</ListItem>
+            </UnorderedList>
+    </VStack>
 }
