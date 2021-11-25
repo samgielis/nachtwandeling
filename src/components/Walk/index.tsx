@@ -8,9 +8,10 @@ interface WalkProps {
     komootId: string;
     location: string;
     date?: Date;
+    isDraft?: boolean;
 }
 
-export const Walk = ({ komootId, location, date }: WalkProps) => {
+export const Walk = ({ komootId, location, date, isDraft }: WalkProps) => {
     const [isLoaded, setLoaded] = useState(false);
     const { ref, inView } = useInView({
         /* Optional options */
@@ -18,7 +19,7 @@ export const Walk = ({ komootId, location, date }: WalkProps) => {
     });
     return <Stack spacing={4} fontFamily="sans-serif" ref={ref}>
         <Stack spacing={1}>
-            <DateHeader date={date} />
+            <DateHeader date={date} isDraft={isDraft} />
             <Heading as="h2" textTransform="uppercase" color="rgb(79, 133, 13)">
                 {location}
             </Heading>
@@ -32,9 +33,10 @@ export const Walk = ({ komootId, location, date }: WalkProps) => {
 
 interface DateHeaderProps {
     date?: Date;
+    isDraft?: boolean;
 }
 
-const DateHeader = ({ date }: DateHeaderProps) => {
+const DateHeader = ({ date, isDraft }: DateHeaderProps) => {
     const isUpcoming = date && date > new Date();
 
     return <HStack spacing={2}>
@@ -42,5 +44,6 @@ const DateHeader = ({ date }: DateHeaderProps) => {
             {date?.toLocaleDateString() || "TBD"}
         </Heading>
         {isUpcoming && <Badge colorScheme="blue">Upcoming</Badge>}
+        {isDraft && <Badge colorScheme="red">Draft</Badge>}
     </HStack>
 }

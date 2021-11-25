@@ -13,7 +13,7 @@ export const Home = () => {
             wandelingen
         </Heading>
         <Stack w="100%" divider={<MoonDivider/>}>
-            <Walk location="Averbode bos & heide" komootId="570508073" date={new Date("12/18/2021")} />
+            <Walk location="Averbode bos & heide" komootId="570508073" date={new Date("12/18/2021")} isDraft />
             <Walk location="Kagevinne" komootId="570502619" date={new Date("11/19/2021")} />
             <Walk location="Gerhagen" komootId="503252998" date={new Date("09/25/2021")} />
         </Stack>
