@@ -1,7 +1,7 @@
 import { Heading, HStack, Spacer } from "@chakra-ui/layout"
 import { FaMoon } from "react-icons/fa"
-import { ColorModeSwitcher } from "./ColorModeSwitcher"
-import { Link } from "./components/Link"
+import { ColorModeSwitcher } from "../ColorModeSwitcher"
+import { Link } from "../components/Link"
 
 export const Header = () => {
     return <HStack justifyContent="center" alignItems="center" p={3} borderBottom="1px solid">

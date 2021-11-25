@@ -6,7 +6,7 @@ import {
   Stack,
   Center,
 } from "@chakra-ui/react"
-import { Header } from "./Header"
+import { Header } from "./layout/Header"
 import { Route, Routes } from "react-router-dom"
 import { Home } from "./screens/Home"
 import { Practical } from "./screens/Practical"
