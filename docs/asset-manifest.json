@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/nachtwandeling/static/js/main.2d9804e3.chunk.js",
-    "main.js.map": "/nachtwandeling/static/js/main.2d9804e3.chunk.js.map",
+    "main.js": "/nachtwandeling/static/js/main.16325ff7.chunk.js",
+    "main.js.map": "/nachtwandeling/static/js/main.16325ff7.chunk.js.map",
     "runtime-main.js": "/nachtwandeling/static/js/runtime-main.cf8e7537.js",
     "runtime-main.js.map": "/nachtwandeling/static/js/runtime-main.cf8e7537.js.map",
     "static/js/2.8983ced0.chunk.js": "/nachtwandeling/static/js/2.8983ced0.chunk.js",
@@ -14,6 +14,6 @@
   "entrypoints": [
     "static/js/runtime-main.cf8e7537.js",
     "static/js/2.8983ced0.chunk.js",
-    "static/js/main.2d9804e3.chunk.js"
+    "static/js/main.16325ff7.chunk.js"
   ]
 }
