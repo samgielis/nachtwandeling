@@ -14,7 +14,6 @@ export const Header = () => {
         <Spacer />
         <HStack>
         <HStack spacing={4}>
-            <Link to="/">Kalender</Link>
             <Link to="praktisch">Praktisch</Link>
         </HStack>
         <Spacer />
