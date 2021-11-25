@@ -13,8 +13,8 @@ export const Practical = () => {
         </Text>
             <UnorderedList>
                 <ListItem>🍻 Breng je eigen drank of snacks mee</ListItem>
-                <ListItem>⏱️ Kom optijd naar de startplaats</ListItem>
-                <ListItem>🔦 Breng toch-door-het-donker-gewijs een zaklamp mee</ListItem>
+                <ListItem>⏱️ Kom op tijd naar de startplaats</ListItem>
+                <ListItem>🔦 Breng tocht-door-het-donker-gewijs een zaklamp mee</ListItem>
             </UnorderedList>
     </VStack>
 }
