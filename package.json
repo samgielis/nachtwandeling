@@ -1,5 +1,6 @@
 {
-  "name": "my-app",
+  "name": "nachtwandeling",
+  "homepage": "https://samgielis.github.io/nachtwandeling",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
