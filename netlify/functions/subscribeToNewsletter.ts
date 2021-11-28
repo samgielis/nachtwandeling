@@ -9,27 +9,23 @@ interface SubsribeToNewsLetterPayload {
     name?: string;
 }
 
-const handler: Handler = async (event, context) => {
+const handler: Handler = (event, context, callback) => {
     try {
         const payload: SubsribeToNewsLetterPayload = JSON.parse(event.body);
         const name = payload.name || "Wandelaar";
         if (!payload.email) {
-            return createError("No email provided", 400);
+            return callback(undefined, createError("No email provided", 400));
         }
-
-        try {
-            await addToMailjetList(payload.email, name);
-        } catch (e) {
-            return createError("Mailjet error", e?.statusCode);
-        }
+        addToMailjetList(payload.email, name).then((response) => {
+            callback(undefined, createResponse("Subscription complete"))
+        }).catch(error => {
+            callback(createError("Mailjet error"), undefined);
+        })
     } catch (e) {
-        return createError("Unknown error", 400);
+        return callback(createError("Unknown error", 400), undefined);
     }
 
-    return {
-        statusCode: 200,
-        body: JSON.stringify({ message: "Hello World" }),
-    };
+    return callback(undefined, createResponse("Subscription complete"));
 };
 
 function createError(message: string, code?: number): Response {
@@ -38,6 +34,14 @@ function createError(message: string, code?: number): Response {
         body: JSON.stringify({ error: message })
     }
 }
+
+function createResponse(message: string): Response {
+    return {
+        statusCode: 200,
+        body: JSON.stringify({ error: message })
+    }
+}
+
 export { handler };
 
 function addToMailjetList(email: string, name: string): Promise<any> {
