@@ -21,8 +21,6 @@ export const NewsLetterModal = ({isOpen, onClose}: NewsLetterModalProps) => {
     } = useForm();
 
     function onSubmit(values: { email: string, name: string }) {
-        console.log(values)
-
         const handleError = () => {
             toast({
                 title: "Er ging iets mis.",
@@ -49,10 +47,10 @@ export const NewsLetterModal = ({isOpen, onClose}: NewsLetterModalProps) => {
                         status: "success",
                         isClosable: true,
                     });
+                    onClose();
                     resolve(undefined);
                 }
             }).catch((e) => {
-                console.log(e);
                 handleError();
                 reject();
             })
