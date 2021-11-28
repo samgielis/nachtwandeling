@@ -1,6 +1,6 @@
 import { Heading, HStack, Spacer } from "@chakra-ui/layout"
 import { FaMoon } from "react-icons/fa"
-import { ColorModeSwitcher } from "../ColorModeSwitcher"
+import { SwitchColorModeButton } from "../components/SwitchColorModeButton"
 import { Link } from "../components/Link"
 
 export const Header = () => {
@@ -17,7 +17,7 @@ export const Header = () => {
             <Link to="praktisch">Praktisch</Link>
         </HStack>
         <Spacer />
-        <ColorModeSwitcher justifySelf="flex-end" />
+        <SwitchColorModeButton justifySelf="flex-end" />
         </HStack>
     </HStack>
 }
