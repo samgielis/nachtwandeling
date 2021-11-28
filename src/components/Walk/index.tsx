@@ -25,7 +25,7 @@ export const Walk = ({ komootId, location, date, isDraft }: WalkProps) => {
             </Heading>
         </Stack>
         {komootId && <Skeleton isLoaded={isLoaded}>
-            {(inView || isLoaded) && <iframe onLoad={() => { setLoaded(true) }} src={`https://www.komoot.com/tour/${komootId}/embed`} width="100%" height="500px" frameBorder="0" scrolling="no"></iframe>}
+            {(inView || isLoaded) && <iframe onLoad={() => { setLoaded(true) }} src={`https://www.komoot.com/tour/${komootId}/embed`} title={`Map for route ${komootId}`} width="100%" height="500px" frameBorder="0" scrolling="no"></iframe>}
         </Skeleton>
         }
     </Stack>
