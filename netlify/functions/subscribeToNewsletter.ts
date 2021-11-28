@@ -6,24 +6,15 @@ const CONTACT_LIST_ID = 8451;
 
 interface SubsribeToNewsLetterPayload {
     email?: string;
-    fname?: string;
-    lname?: string;
+    name?: string;
 }
 
 const handler: Handler = async (event, context) => {
     try {
         const payload: SubsribeToNewsLetterPayload = JSON.parse(event.body);
-        let name: string;
+        const name = payload.name || "Wandelaar";
         if (!payload.email) {
             return createError("No email provided", 400);
-        }
-
-        if (!payload.fname && !payload.lname) {
-            name = "Wandelaar"
-        } else if (payload.fname && payload.lname) {
-            name = `${payload.fname} ${payload.lname}`;
-        } else {
-            name = payload.fname || payload.lname
         }
 
         try {
