@@ -54,7 +54,7 @@ function addToMailjetList(email: string, name: string): Promise<any> {
         .action("managecontact")
         .request({
             "Name": name,
-            "Properties": "object",
+            "Properties": JSON.stringify({Name: name}),
             "Action": "addnoforce",
             "Email": email
         });
