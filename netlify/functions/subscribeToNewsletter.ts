@@ -19,9 +19,11 @@ const handler: Handler = (event, context, callback) => {
         addToMailjetList(payload.email, name).then((response) => {
             callback(undefined, createResponse("Subscription complete"))
         }).catch(error => {
+            console.log("Mailjet", error)
             callback(createError("Mailjet error"), undefined);
         })
     } catch (e) {
+        console.log("catch", e)
         return callback(createError("Unknown error", 400), undefined);
     }
 
