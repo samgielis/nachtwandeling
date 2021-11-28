@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBullhorn } from '@fortawesome/free-solid-svg-icons'
 import { useDisclosure } from "@chakra-ui/hooks"
 import { NewsLetterModal } from "../NewsLetterModal"
-import { Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverCloseButton, PopoverHeader, PopoverBody } from "@chakra-ui/popover"
+import { Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverBody } from "@chakra-ui/popover"
 import { useState } from "react"
 import { Box } from "@chakra-ui/layout"
 import { useColorModeValue } from "@chakra-ui/color-mode"
@@ -27,8 +27,8 @@ export const NewsLetterButton: React.FC = () => {
             setIsOpen(true);
             setHasSeenNewsLetterPopover(true);
         }, 3000)
-    }, []);
-    
+    }, [setIsOpen, hasSeenNewsLetterPopover, setHasSeenNewsLetterPopover]);
+
     return (
         <>
             <Popover isOpen={isCTAOpen} onClose={() => { setIsOpen(false) }} placement="bottom">
