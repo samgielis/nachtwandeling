@@ -1,6 +1,6 @@
 import { Handler } from "@netlify/functions";
 import { Response } from "@netlify/functions/dist/function/response";
-const mailjet = require ('node-mailjet')
+import * as mailjet from 'node-mailjet'
 
 const CONTACT_LIST_ID = 8451;
 
@@ -47,9 +47,8 @@ function createResponse(message: string): Response {
 export { handler };
 
 function addToMailjetList(email: string, name: string): Promise<any> {
-    mailjet
-        .connect(process.env.MJ_APIKEY_PUBLIC, process.env.MJ_APIKEY_PRIVATE);
     return mailjet
+        .connect(process.env.MJ_APIKEY_PUBLIC, process.env.MJ_APIKEY_PRIVATE)
         .post("contactslist", { 'version': 'v3' })
         .id(CONTACT_LIST_ID)
         .action("managecontact")
