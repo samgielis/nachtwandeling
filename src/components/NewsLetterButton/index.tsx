@@ -72,16 +72,16 @@ export const NewsLetterButton: React.FC = (props) => {
                         <ModalBody pb={6}>
                             <Stack>
                                 <FormControl id="email" isRequired>
-                                    <FormLabel>Email</FormLabel>
+                                    <FormLabel>E-mail</FormLabel>
                                     <Input type="email"
                                         placeholder="voorbeeld@gmail.com"
                                         {...register("email", {
-                                            required: "Email is verplicht",
+                                            required: "E-mail is verplicht",
                                         })} />
                                     <FormErrorMessage>
                                         {errors.email && errors.email.message}
                                     </FormErrorMessage>
-                                    <FormHelperText>We gebruiken je email enkel om updates te geven over onze wandelingen.</FormHelperText>
+                                    <FormHelperText>We gebruiken je e-mailadres enkel om updates te geven over onze wandelingen.</FormHelperText>
 
                                 </FormControl>
                                 <FormControl id="name">
@@ -93,7 +93,7 @@ export const NewsLetterButton: React.FC = (props) => {
                                     <FormErrorMessage>
                                         {errors.name && errors.name.message}
                                     </FormErrorMessage>
-                                    <FormHelperText>Hiermee personaliseren we onze emails.</FormHelperText>
+                                    <FormHelperText>Hiermee personaliseren we onze e-mails.</FormHelperText>
                                 </FormControl>
                             </Stack>
                         </ModalBody>
