@@ -1,6 +1,6 @@
 import { Handler } from "@netlify/functions";
 import { Response } from "@netlify/functions/dist/function/response";
-import mailjet from "node-mailjet";
+const mailjet = require ('node-mailjet')
 
 const CONTACT_LIST_ID = 8451;
 
