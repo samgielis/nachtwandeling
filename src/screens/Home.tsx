@@ -14,6 +14,7 @@ export const Home = () => {
         </Heading>
         <Stack w="100%" divider={<MoonDivider/>}>
             {/*<Walk location="Averbode bos & heide" komootId="570508073" date={new Date("12/18/2021")} isDraft />*/}
+            <Walk location="Expeditie Glühwein" komootId="986841721" date={new Date("17/12/2022")} />
             <Walk location="Schaffen Hees (afterparty met vuurschaal)" komootId="924497918" date={new Date("08/10/2022")} />
             <Walk location="Fort leopold & Dassenaarde" komootId="658668826" date={new Date("02/26/2022")} />
             <Walk location="Kaggevinne" komootId="570502619" date={new Date("11/19/2021")} />
